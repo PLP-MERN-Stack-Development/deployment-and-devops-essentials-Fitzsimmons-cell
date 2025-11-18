@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import api from './services/api';
-import BugForm from './components/BugForm';
-import BugList from './components/BugList';
-
+import api from './services/api.js';
+import BugForm from './components/BugForm.jsx';   
+import BugList from './components/BugList.jsx';   
 function App() {
   const [bugs, setBugs] = useState([]);
   const [error, setError] = useState('');
