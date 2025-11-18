@@ -1,77 +1,188 @@
-# Deployment and DevOps for MERN Applications
+🐞 MERN Bug Tracker
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+A full-stack bug tracking system built using the MERN stack.
+Users can report bugs, view existing bugs, and manage issues using a clean React UI connected to a fully deployed Express + MongoDB backend.
 
-## Assignment Overview
+🚀 Live Demo
+Frontend (Vercel)
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+🔗 https://deployment-and-devops-essentials-q1.vercel.app/
 
-## Getting Started
+Backend API (Render)
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+🔗 https://deployment-and-devops-essentials-52py.onrender.com
 
-## Files Included
+📌 Features
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+Add new bug reports
 
-## Requirements
+View all bugs
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+REST API with Express + MongoDB
 
-## Deployment Platforms
+Fully deployed backend on Render
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+Vite-powered React frontend on Vercel
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+Centralized API service using Axios
 
-## CI/CD Pipeline
+CORS enabled
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+🛠️ Tech Stack
+Frontend
 
-## Submission
+React (Vite)
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Axios
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+JavaScript / JSX
 
-## Resources
+Backend
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+Node.js
+
+Express.js
+
+MongoDB & Mongoose
+
+dotenv
+
+CORS
+
+Deployment
+
+Vercel (Frontend Hosting)
+
+Render (Backend Hosting)
+
+GitHub (Version Control)
+
+📁 Folder Structure
+MERN-Bug-Tracker/
+│
+├── Backend/
+│   ├── server.js
+│   ├── package.json
+│   ├── controllers/
+│   │   └── bugController.js
+│   ├── routes/
+│   │   └── bugRoutes.js
+│   └── models/
+│       └── Bug.js
+│
+└── Frontend/
+    ├── index.html
+    ├── vite.config.js
+    ├── package.json
+    └── src/
+        ├── App.jsx
+        ├── main.jsx
+        ├── components/
+        │   ├── BugForm.jsx
+        │   └── BugList.jsx
+        └── services/
+            └── api.js
+
+📡 API Endpoints
+Base URL
+https://deployment-and-devops-essentials-52py.onrender.com/api
+
+GET /bugs
+
+Fetch all bugs
+Response example:
+
+[
+  {
+    "_id": "673ad1",
+    "title": "Button not working",
+    "description": "Submit button fails",
+    "priority": "medium"
+  }
+]
+
+POST /bugs
+
+Create a new bug
+Body example:
+
+{
+  "title": "Error on homepage",
+  "description": "Modal does not close",
+  "priority": "high"
+}
+
+PATCH /bugs/:id
+
+Update a bug
+
+DELETE /bugs/:id
+
+Delete a bug
+
+⚙️ Environment Variables
+Backend .env
+MONGO_URI=your_mongo_uri
+PORT=5000
+
+Frontend .env
+VITE_API_URL=https://deployment-and-devops-essentials-52py.onrender.com
+
+
+Accessed in api.js:
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+});
+
+🚀 Deployment Instructions
+Backend Deployment (Render)
+
+Create new Render Web Service
+
+Connect GitHub repo
+
+Build command:
+
+npm install
+
+
+Start command:
+
+node server.js
+
+
+Add environment variables
+
+Deploy
+
+Frontend Deployment (Vercel)
+
+Import GitHub repo
+
+Framework preset: Vite
+
+Build command:
+
+npm run build
+
+
+Output directory:
+
+build
+
+
+Add environment variables
+
+Deploy
+
+🖼️ Screenshots (Optional)
+
+To add screenshots, create a /screenshots folder:
+
+/screenshots/preview.png
+
+
+Insert like this:
+
+![App Preview](screenshots/preview.png)
